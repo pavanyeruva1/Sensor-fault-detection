@@ -12,7 +12,8 @@ class MangoDBclient:
     def __init__(self,database_name=DATABASE_NAME):
         try:
             if MangoDBclient.client is None:
-                mango_db_url=os.getenv(MANGODB_URL_KEY)
+                #mango_db_url=os.getenv(MANGODB_URL_KEY)
+                mango_db_url="mongodb+srv://pavanyeruva:pavan123@cluster0.sl6blsw.mongodb.net/?retryWrites=true&w=majority"
                 MangoDBclient.client=pymongo.MongoClient(mango_db_url,tlsCAFile=ca)
             self.client=MangoDBclient.client
             self.database=self.client[database_name]
